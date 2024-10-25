@@ -114,17 +114,19 @@
     apt:
       name: python-is-python3
       update_cache: yes
+  - name: Install pip for python3 with Apt
+    apt:
+      name: python3-pip
+      update_cache: yes
   - name: Install python packages with pip
     pip:
-      extra_args: --break-system-packages
+      break_system_packages: true
       name:
         - jupyterlab
         - notebook
         - voila
         - pint
 
-  roles:
-    - role: geerlingguy.pip
 
 - 
   # install sudo for the vs-code role below 
