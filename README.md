@@ -2,12 +2,12 @@
 
 ## Introduction
 
-This repo provides a workspace for Mach 30 volunteers to work on Python projects based on the [Ansible based template for KASM Ubuntu Focal Images](https://github.com/j-simmons-phd/kasm-core-focal-template) template provided by @j-simmons-phd.  The workspace is configured with the following software:
+This repo provides a workspace for Mach 30 volunteers to work on Python projects based on the [Ansible based template for KASM Ubuntu Focal Images](https://github.com/j-simmons-phd/kasm-core-focal-template) template provided by @j-simmons-phd and upgraded to Ubuntu Noble Numbat manually.  The workspace is configured with the following software:
 
-- git cli
-- [Keychain](https://www.funtoo.org/Keychain)
+- git cli 2.47.0
+- [Keychain](https://www.funtoo.org/Keychain) 2.8.5
 - Chrome
-- Python 3.8.x (part of the image template) with the following packages (not part of the image template)
+- Python 3.12.x (part of the image template) with the following packages (not part of the image template)
     - pip
     - [JupyterLab](https://jupyter.org/)
     - [Jupyter Notebook](https://jupyter.org/)
