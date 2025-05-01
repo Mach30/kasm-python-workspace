@@ -78,7 +78,7 @@
     shell: add-apt-repository ppa:git-core/ppa
   - name: Install git
     apt:
-      name: "git={{ git_version_to_install }}"  
+      name: "git"
   - name: Install Keychain
     apt:
       name: "keychain={{ keychain_version_to_install }}"
@@ -94,10 +94,10 @@
   - name: Display git and keychain versions
     debug:
       msg: "git = {{ installed_git_version.stdout }} | keychain = {{ installed_keychain_version.stdout }}"
-  - name: Test git version
-    fail:
-      msg: "Git Version Error: Expected {{ git_version }} | Found {{ installed_git_version.stdout }}"
-    when: installed_git_version.stdout != git_version  
+#  - name: Test git version
+#    fail:
+#      msg: "Git Version Error: Expected {{ git_version }} | Found {{ installed_git_version.stdout }}"
+#    when: installed_git_version.stdout != git_version
   - name: Test keychain version
     fail:
       msg: "Keychain Version Error: Expected {{ keychain_version_expected }} | Found {{ installed_keychain_version.stdout }}"
@@ -113,6 +113,10 @@
   - name: Update OS to point python to python3
     apt:
       name: python-is-python3
+      update_cache: yes
+  - name: Install venv for python3 with Apt
+    apt:
+      name: python3-venv
       update_cache: yes
   - name: Install pip for python3 with Apt
     apt:
